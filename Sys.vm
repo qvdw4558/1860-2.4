@@ -82,10 +82,10 @@ label findMinMax
     pop local 1
 
 label counter                  
-    push argument 0
+    push pointer 0
     push constant 1
     add 
-    pop argument 0
+    pop pointer 0
     push argument 1
     push constant 1
     sub
