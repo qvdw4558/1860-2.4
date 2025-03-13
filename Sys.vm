@@ -35,6 +35,8 @@ function Sys.min 0
     gt
 
     if-goto bigOnemax
+    
+    push argument 0
     goto ENDmax
 
 label bigZeromax
@@ -79,7 +81,7 @@ label findMinMax
     call Sys.max 2
     pop local 1
 
-label counter                   //counts the number of bubble sort moves
+label counter                  
     push argument 0
     push constant 1
     add 
