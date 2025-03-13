@@ -1,1 +1,104 @@
+function Sys.max 0
+    push argument 1
+    push argument 0
+    lt
+    if-goto bigZeromin
 
+    push argument 1
+    push argument 0
+    gt
+    if-goto bigOnemin
+
+    push argument 0
+    goto ENDmin
+
+label bigZeromin
+    push argument 0
+    goto ENDmin
+
+label bigOnemin
+    push argument 1
+    goto ENDmin
+
+label ENDmin
+    return
+
+
+function Sys.min 0
+    push argument 1
+    push argument 0
+    lt
+    if-goto bigZeromax
+
+    push argument 1
+    push argument 0
+    gt
+
+    if-goto bigOnemax
+    goto ENDmax
+
+label bigZeromax
+    push argument 1
+    goto ENDmax
+
+label bigOnemax
+    push argument 0
+    goto ENDmax
+
+label ENDmax
+    return
+
+
+function Sys.range 2
+    push argument 1
+    push constant 2
+    lt
+    if-goto ENDrange
+
+    push argument 0
+    pop pointer 0
+    push this 0
+    pop local 0
+    push this 0
+    pop local 1
+
+label findMinMax
+    push argument 0
+    pop pointer 0
+
+    push local 0
+    push this 1
+    call Sys.min 2
+    pop local 0
+
+    push argument 0
+    pop pointer 0
+
+    push local 1
+    push this 1
+    call Sys.max 2
+    pop local 1
+
+label counter                   //counts the number of bubble sort moves
+    push argument 0
+    push constant 1
+    add 
+    pop argument 0
+    push argument 1
+    push constant 1
+    sub
+    pop argument 1
+    push argument 1
+    push constant 0
+    eq
+    if-goto rangeCalc
+    goto findMinMax
+
+
+label rangeCalc
+    push local 1
+    push local 0
+    sub
+
+label ENDrange
+    return
