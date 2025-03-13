@@ -102,3 +102,9 @@ label rangeCalc
 
 label ENDrange
     return
+
+
+function Sys.init 0
+    call Sys.range 2
+label WHILE
+    goto WHILE
