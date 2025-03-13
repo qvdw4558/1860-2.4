@@ -53,7 +53,7 @@ function Sys.range 2
     push argument 1
     push constant 2
     lt
-    if-goto ENDrange
+    if-goto flagrange
 
     push argument 0
     pop pointer 0
@@ -99,6 +99,11 @@ label rangeCalc
     push local 1
     push local 0
     sub
+    goto ENDrange
+
+label flagrange
+    push constant 0
+    goto ENDrange
 
 label ENDrange
     return
