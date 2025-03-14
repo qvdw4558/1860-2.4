@@ -65,16 +65,14 @@ function Sys.range 2
     pop local 1
 
 label findMinMax
-    push argument 0
-    pop pointer 0
+    push pointer 0
 
     push local 0
     push this 1
     call Sys.min 2
     pop local 0
 
-    push argument 0
-    pop pointer 0
+    push pointer 0
 
     push local 1
     push this 1
@@ -93,11 +91,11 @@ label counter
     push argument 1
     push constant 0
     eq
-    if-goto rangeCalc
+    if-goto calculateRange
     goto findMinMax
 
 
-label rangeCalc
+label calculateRange
     push local 1
     push local 0
     sub
