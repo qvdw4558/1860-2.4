@@ -54,11 +54,13 @@ function Sys.range 2
     push argument 1
     push constant 1
     eq
+    push constant 0
     if-goto ENDrange
 
     push argument 1
     push constant 0
     eq
+    push constant 0
     if-goto ENDrange
 
     push argument 0
