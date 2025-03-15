@@ -52,8 +52,13 @@ label ENDmax
 
 function Sys.range 2
     push argument 1
-    push constant 2
-    lt
+    push constant 1
+    eq
+    if-goto ENDrange
+
+    push argument 1
+    push constant 0
+    eq
     if-goto ENDrange
 
     push argument 0
