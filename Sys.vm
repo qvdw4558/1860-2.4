@@ -54,14 +54,12 @@ function Sys.range 2
     push argument 1
     push constant 1
     eq
-    push constant 0
-    if-goto ENDrange
+    if-goto flagrange
 
     push argument 1
     push constant 0
     eq
-    push constant 0
-    if-goto ENDrange
+    if-goto flagrange
 
     push argument 0
     pop pointer 0
@@ -102,11 +100,16 @@ label counter
     if-goto rangeCalc
     goto findMinMax
 
+label flagrange
+    push constant 0
+    goto ENDrange
+
 
 label rangeCalc
     push local 1
     push local 0
     sub
+    goto ENDrange
 
 label ENDrange
     return
