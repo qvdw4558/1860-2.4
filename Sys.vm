@@ -85,7 +85,7 @@ label ENDmax
 // stack, so that, from the point of view of the callee, the
 // result is at the top of the stack.
 //
-function Sys.range 3
+function Sys.range 2
     push argument 0                                     //Have this start from the first element of the array
     pop pointer 0
 
